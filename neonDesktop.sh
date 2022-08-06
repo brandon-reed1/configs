@@ -52,7 +52,9 @@ echo "${GREEN} apt install ffmpeg build-essential moc moc-ffmpeg-plugin qemu she
 sudo apt-get install ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck kate openjdk-17-jdk openjdk-17-jre neovim -y
 echo "${GREEN} flatpak install ktorrent kdenlive Blender LibreOffice Discord nvim marktext Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
 sudo flatpak install flathub org.kde.ktorrent org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord com.github.marktext.marktext org.inkscape.Inkscape org.kde.krita org.godotengine.Godot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.mojang.Minecraft com.obsproject.Studio -y
-
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+       
 echo "${GREEN} Downloading github projects to /github dir${NC}"
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
