@@ -49,11 +49,17 @@ echo "${GREEN} Solana CLI${NC}"
 sh -c "$(curl -sSfL https://release.solana.com/v1.10.29/install)"
 
 echo "${GREEN} apt install ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck kate java17${NC}"
-sudo apt-get install ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck kate openjdk-17-jdk openjdk-17-jre neovim -y
-echo "${GREEN} flatpak install ktorrent kdenlive Blender LibreOffice Discord nvim marktext Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
-sudo flatpak install flathub org.kde.ktorrent org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord com.github.marktext.marktext org.inkscape.Inkscape org.kde.krita org.godotengine.Godot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.mojang.Minecraft com.obsproject.Studio -y
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+sudo apt-get install ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck openjdk-17-jdk openjdk-17-jre -y
+echo "${GREEN} flatpak install ktorrent kdenlive Blender LibreOffice Discord marktext Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
+sudo flatpak install flathub org.kde.ktorrent org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord com.github.marktext.marktext org.inkscape.Inkscape org.kde.krita org.godotengine.GFodot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.mojang.Minecraft com.obsproject.Studio -y
+wget --quiet https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage --output-document nvim
+chmod +x nvim
+sudo chown root:root nvim
+sudo mv nvim /usr/bin
+cd ~
+mkdir -p .config/nvim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
        
 echo "${GREEN} Downloading github projects to /github dir${NC}"
 git config --global user.name "trevor256"
