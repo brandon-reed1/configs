@@ -56,11 +56,9 @@ wget --quiet https://github.com/neovim/neovim/releases/download/nightly/nvim.app
 chmod +x nvim
 sudo chown root:root nvim
 sudo mv nvim /usr/bin
-cd ~
 mkdir -p .config/nvim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-       
 echo "${GREEN} Downloading github projects to /github dir${NC}"
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
