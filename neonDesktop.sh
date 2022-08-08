@@ -11,6 +11,17 @@ NC="$(tput sgr0)"
 echo "${GREEN} Updating${NC}"
 sudo pkcon update -y
 
+echo "${GREEN} apt install ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck kate java17${NC}"
+sudo apt-get install ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck openjdk-17-jdk openjdk-17-jre python3-pip -y
+echo "${GREEN} flatpak install ktorrent kdenlive Blender LibreOffice Discord marktext Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
+sudo flatpak install flathub org.kde.ktorrent org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord com.github.marktext.marktext org.inkscape.Inkscape org.kde.krita org.godotengine.GFodot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.mojang.Minecraft com.obsproject.Studio -y
+wget --quiet https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage --output-document nvim
+chmod +x nvim
+sudo chown root:root nvim
+sudo mv nvim /usr/bin
+mkdir -p .config/nvim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 echo "${GREEN} Installing GO${NC}"
 curl -OL https://go.dev/dl/go1.19.linux-amd64.tar.gz
 sudo tar -C /usr/local -xvf go1.19.linux-amd64.tar.gz
@@ -31,6 +42,10 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip awscliv2.zip
 sudo ./aws/install
 
+echo "${GREEN} Installing AWS EB CLI${NC}"
+git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
+sudo ./aws-elastic-beanstalk-cli-setup/scripts/ebcli_installer.py
+
 echo "${GREEN} Installing GCP CLI${NC}"
 sudo apt-get install apt-transport-https ca-certificates gnupg -y
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
@@ -47,17 +62,6 @@ wget https://downloads.getmonero.org/linux64 && tar jxvf linux64
 
 echo "${GREEN} Solana CLI${NC}"
 sh -c "$(curl -sSfL https://release.solana.com/v1.10.29/install)"
-
-echo "${GREEN} apt install ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck kate java17${NC}"
-sudo apt-get install ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck openjdk-17-jdk openjdk-17-jre -y
-echo "${GREEN} flatpak install ktorrent kdenlive Blender LibreOffice Discord marktext Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
-sudo flatpak install flathub org.kde.ktorrent org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord com.github.marktext.marktext org.inkscape.Inkscape org.kde.krita org.godotengine.GFodot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.mojang.Minecraft com.obsproject.Studio -y
-wget --quiet https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage --output-document nvim
-chmod +x nvim
-sudo chown root:root nvim
-sudo mv nvim /usr/bin
-mkdir -p .config/nvim
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "${GREEN} Downloading github projects to /github dir${NC}"
 git config --global user.name "trevor256"
