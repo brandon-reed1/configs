@@ -45,6 +45,7 @@ sudo ./aws/install
 echo "${GREEN} Installing AWS EB CLI${NC}"
 git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
 sudo python3 ./aws-elastic-beanstalk-cli-setup/scripts/ebcli_installer.py
+echo 'export PATH="/root/.ebcli-virtual-env/executables:$PATH"' >> ~/.bash_profile && source ~/.bash_profile
 
 echo "${GREEN} Installing GCP CLI${NC}"
 sudo apt-get install apt-transport-https ca-certificates gnupg -y
