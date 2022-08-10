@@ -62,6 +62,12 @@ wget https://downloads.getmonero.org/linux64 && tar jxvf linux64
 echo "${GREEN} Solana CLI${NC}"
 sh -c "$(curl -sSfL https://release.solana.com/v1.10.29/install)"
 
+echo "${GREEN} Stripe CLI${NC}"
+curl https://packages.stripe.dev/api/security/keypair/stripe-cli-gpg/public | apt-key add -
+echo "deb https://packages.stripe.dev/stripe-cli-debian-local stable main" | sudo tee -a /etc/apt/sources.list
+sudo apt update
+sudo apt install stripe
+
 echo "${GREEN} Downloading github projects to /github dir${NC}"
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
