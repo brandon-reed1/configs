@@ -63,7 +63,7 @@ echo "${GREEN} Solana CLI${NC}"
 sh -c "$(curl -sSfL https://release.solana.com/v1.10.29/install)"
 
 echo "${GREEN} Stripe CLI${NC}"
-curl https://packages.stripe.dev/api/security/keypair/stripe-cli-gpg/public | apt-key add -
+curl https://packages.stripe.dev/api/security/keypair/stripe-cli-gpg/public | sudo apt-key add -
 echo "deb https://packages.stripe.dev/stripe-cli-debian-local stable main" | sudo tee -a /etc/apt/sources.list
 sudo apt update
 sudo apt install stripe
