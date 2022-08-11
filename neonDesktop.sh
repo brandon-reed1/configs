@@ -73,6 +73,7 @@ git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
 git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com/
 git clone https://github.com/trevor256/LinuxConfig.git github/MyConfig/
+git clone https://github.com/trevor256/BSFSB github/BSFSB/
 git clone https://github.com/trevor256/erupt-0.2.git github/erupt-0.2/
 chmod -R 777 github
 
