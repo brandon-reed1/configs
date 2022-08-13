@@ -45,14 +45,16 @@ sudo ./aws/install
 echo "${GREEN} Installing AWS EB CLI${NC}"
 sudo pip3 install awsebcli --force-reinstall --upgrade
 
+echo "${GREEN} Installing AWS EB CLI${NC}"
+wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
+unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
+sudo ./sam-installation/install
+
 echo "${GREEN} Installing GCP CLI${NC}"
 sudo apt-get install apt-transport-https ca-certificates gnupg -y
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 sudo curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
-
-echo "${GREEN} Installing Azure CLI${NC}"
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 echo "${GREEN} Monero CLI${NC}"
 wget https://downloads.getmonero.org/linux64 && tar jxvf linux64 
