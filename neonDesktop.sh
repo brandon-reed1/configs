@@ -77,6 +77,15 @@ echo "deb https://packages.stripe.dev/stripe-cli-debian-local stable main" | sud
 sudo apt update
 sudo apt install stripe
 
+echo "${GREEN} docker${NC}"
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
 echo "${GREEN} Downloading github projects to /github dir${NC}"
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
