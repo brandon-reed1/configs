@@ -1,9 +1,9 @@
 #!/bin/bash
-########################################
+####
 #  Author https://github.com/trevor256
 #  script configs new system
-#  Linux OS (KDE NEON)
-########################################
+#  Run on Linux OS (KDE NEON)
+####
 
 GREEN="$(tput setaf 2)"
 NC="$(tput sgr0)"
@@ -11,10 +11,12 @@ NC="$(tput sgr0)"
 echo "${GREEN} Updating${NC}"
 sudo pkcon update -y
 
-echo "${GREEN} apt install ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck kate java17${NC}"
+echo "${GREEN} apt installlibsdl2-dev kubectl htop cmus ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv${NC}"
 sudo apt-get libsdl2-dev kubectl htop cmus ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv -y
 echo "${GREEN} flatpak install ktorrent kdenlive Blender LibreOffice Discord marktext Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
 sudo flatpak install flathub org.kde.ktorrent org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord com.github.marktext.marktext org.inkscape.Inkscape org.kde.krita org.godotengine.GFodot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.mojang.Minecraft com.obsproject.Studio -y
+
+echo "${GREEN} Installing nvim${NC}"
 wget --quiet https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage --output-document nvim
 chmod +x nvim
 sudo chown root:root nvim
@@ -52,11 +54,6 @@ sudo ./aws/install
 echo "${GREEN} Installing AWS EB CLI${NC}"
 sudo pip3 install awsebcli --force-reinstall --upgrade
 
-echo "${GREEN} Installing AWS EB CLI${NC}"
-wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
-unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
-sudo ./sam-installation/install
-
 echo "${GREEN} Installing GCP CLI${NC}"
 sudo apt-get install apt-transport-https ca-certificates gnupg -y
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
@@ -90,7 +87,7 @@ echo "${GREEN} Downloading github projects to /github dir${NC}"
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
 git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com/
-git clone https://github.com/trevor256/LinuxConfig.git github/MyConfig/
+git clone https://github.com/trevor256/MyConfig.git github/MyConfig/
 git clone https://github.com/trevor256/BSFSB github/BSFSB/
 git clone https://github.com/trevor256/erupt-0.2.git github/erupt-0.2/
 chmod -R 777 github
