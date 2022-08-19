@@ -3,6 +3,7 @@
 #  Author https://github.com/trevor256
 #  script configs new system
 #  Run on Linux OS (KDE NEON)
+# make a usb      lsblk           sudo dd bs=4M if=Downloads/neon.iso of=sd<?> conv=fdatasync status=progress
 ####
 
 GREEN="$(tput setaf 2)"
