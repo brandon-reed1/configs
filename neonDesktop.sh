@@ -9,7 +9,6 @@ NC="$(tput sgr0)"
 
 echo "${GREEN} Updating${NC}"
 sudo pkcon update -y
-lookandfeeltool -a 'org.kde.breezedark.desktop'
 
 echo "${GREEN} Installing GO${NC}"
 curl -OL https://go.dev/dl/go1.19.linux-amd64.tar.gz
@@ -18,7 +17,6 @@ echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
 
 echo "${GREEN} Installing Rust, rustc, cargo${NC}"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-sudo apt-get install rustc cargo -y
 
 echo "${GREEN} Installing Node 17 & NPM yarn${NC}"
 curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash -
@@ -67,11 +65,11 @@ echo "${GREEN} Installing starship and nerdfonts${NC}"
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
 unzip Hack.zip -d ~/.fonts
 fc-cache -fv
-curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh -- -y
 echo 'eval "$(starship init bash)"' >> .bashrc
 
 echo "${GREEN} apt install kubectl htop cmus ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv${NC}"
-sudo apt-get install ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv neovim -y
+sudo apt-get install ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv rustc cargo -y
 echo "${GREEN} flatpak install nvim kdenlive Blender LibreOffice Discord Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
 sudo flatpak install flathub io.neovim.nvim org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.inkscape.Inkscape org.kde.krita org.godotengine.GFodot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.atlauncher.ATLauncher com.obsproject.Studio -y
 
