@@ -11,18 +11,13 @@ echo "${GREEN} Updating${NC}"
 sudo pkcon update -y
 
 echo "${GREEN} install nvidia driver 515${NC} (y/n)"
-confirm() {
-    # call with a prompt string or use a default
-    read -r -p "${1:-Are you sure? [y/N]} " response
-    case "$response" in
-        [yY][eE][sS]|[yY]) 
-            true
-            sudo apt-get install nvidia-driver-515 -y
-        *)
-            false
-            echo "${RED}  nvidia driver not installed${NC}"
-    esac
-}
+read -p "Are you sure? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    sudo apt-get install nvidia-driver-515 -y
+fi
+
       
 echo "${GREEN} Installing GO${NC}"
 curl -OL https://go.dev/dl/go1.19.linux-amd64.tar.gz
