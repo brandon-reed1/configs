@@ -22,7 +22,8 @@ read -r reply
 echo "${GREEN} Installing GO${NC}"
 curl -OL https://go.dev/dl/go1.19.linux-amd64.tar.gz
 sudo tar -C /usr/local -xvf go1.19.linux-amd64.tar.gz
-echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
+sudo echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bash_profile
+sudo echo "export GOPATH="/mnt/c/Users/${user}/directory/to/your/golang/workspace"" >> ~/.bash_profile
 
 echo "${GREEN} Installing Rust, rustc, cargo${NC}"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -41,10 +42,8 @@ echo "${GREEN} Installing GCP CLI${NC}"
 sudo apt-get install apt-transport-https ca-certificates gnupg -y
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 sudo curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+sudo apt update -y
 sudo apt-get install google-cloud-cli -y
-
-echo "${GREEN} Solana CLI${NC}"
-sh -c "$(curl -sSfL https://release.solana.com/v1.10.29/install)" -y
 
 echo "${GREEN} Stripe CLI${NC}"
 curl https://packages.stripe.dev/api/security/keypair/stripe-cli-gpg/public | sudo apt-key add -
@@ -81,7 +80,7 @@ echo "${GREEN} Install Xpen${NC}"
 curl https://www.xp-pen.com/download/file/id/1949/pide819/ext/deb.html -o xpen.deb
 sudo dpkg -i xpen.deb
 
-echo "${GREEN} apt install kubectl htop cmus ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv${NC}"
+echo "${GREEN} apt install ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv${NC}"
 sudo apt-get install ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv rustc cargo -y
 echo "${GREEN} flatpak install nvim kdenlive Blender LibreOffice Discord Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
 sudo flatpak install flathub io.neovim.nvim org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.kde.krita org.godotengine.GFodot -y 
