@@ -13,7 +13,7 @@ echo "${GREEN} Updating${NC}"
 sudo pkcon update -y
 
 echo "${GREEN} apt installlibsdl2-dev kubectl htop cmus ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv${NC}"
-sudo apt-get libsdl2-dev kubectl htop cmus ffmpeg build-essential moc moc-ffmpeg-plugin qemu shellcheck openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv -y
+sudo apt-get libsdl2-dev kubectl htop cmus ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv -y
 echo "${GREEN} flatpak install ktorrent kdenlive Blender LibreOffice Discord marktext Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
 sudo flatpak install flathub org.kde.ktorrent org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord com.github.marktext.marktext org.inkscape.Inkscape org.kde.krita org.godotengine.GFodot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.mojang.Minecraft com.obsproject.Studio -y
 
