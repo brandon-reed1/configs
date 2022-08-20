@@ -10,7 +10,7 @@ NC="$(tput sgr0)"
 echo "${GREEN} Updating${NC}"
 sudo pkcon update -y
 
-echo "${GREEN} install nvidia driver 515?${NC} (y/n)"
+echo "${GREEN} install nvidia driver 515${NC} (y/n)"
 confirm() {
     # call with a prompt string or use a default
     read -r -p "${1:-Are you sure? [y/N]} " response
