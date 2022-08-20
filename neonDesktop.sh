@@ -71,7 +71,8 @@ echo 'eval "$(starship init bash)"' >> .bashrc
 echo "${GREEN} apt install kubectl htop cmus ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv${NC}"
 sudo apt-get install ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv rustc cargo -y
 echo "${GREEN} flatpak install nvim kdenlive Blender LibreOffice Discord Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
-sudo flatpak install flathub io.neovim.nvim org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.inkscape.Inkscape org.kde.krita org.godotengine.GFodot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.atlauncher.ATLauncher com.obsproject.Studio -y
+sudo flatpak install flathub io.neovim.nvim org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.kde.krita org.godotengine.GFodot -y 
+sudo flatpak install org.inkscape.Inkscape com.github.unrud.VideoDownloader org.audacityteam.Audacity com.atlauncher.ATLauncher com.obsproject.Studio -y
 
 echo "${GREEN} install nvidia driver 515?${NC} (y/n)"
 read -r reply
