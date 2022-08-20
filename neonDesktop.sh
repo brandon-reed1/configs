@@ -61,18 +61,18 @@ sudo curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key -
 sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
 
 echo "${GREEN} Monero CLI${NC}"
-wget https://downloads.getmonero.org/linux64 && tar jxvf linux64 
+wget https://downloads.getmonero.org/linux64 && tar jxvf linux64 -y
 # ./monerod &
 # ./monero-wallet-cli
 
 echo "${GREEN} Solana CLI${NC}"
-sh -c "$(curl -sSfL https://release.solana.com/v1.10.29/install)"
+sh -c "$(curl -sSfL https://release.solana.com/v1.10.29/install)" -y
 
 echo "${GREEN} Stripe CLI${NC}"
 curl https://packages.stripe.dev/api/security/keypair/stripe-cli-gpg/public | sudo apt-key add -
 echo "deb https://packages.stripe.dev/stripe-cli-debian-local stable main" | sudo tee -a /etc/apt/sources.list
-sudo apt update
-sudo apt install stripe
+sudo apt update -y
+sudo apt install stripe -y
 
 echo "${GREEN} docker${NC}"
 sudo mkdir -p /etc/apt/keyrings
@@ -80,7 +80,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o 
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 
 echo "${GREEN} Downloading github projects to /github dir${NC}"
