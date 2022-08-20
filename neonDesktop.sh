@@ -17,10 +17,10 @@ confirm() {
     case "$response" in
         [yY][eE][sS]|[yY]) 
             true
-            ;; sudo apt-get install nvidia-driver-515 -y
+            sudo apt-get install nvidia-driver-515 -y
         *)
             false
-            ;; echo "${RED}  nvidia driver not installed${NC}"
+            echo "${RED}  nvidia driver not installed${NC}"
     esac
 }
       
