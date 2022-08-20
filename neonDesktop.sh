@@ -11,8 +11,7 @@ echo "${GREEN} Updating${NC}"
 sudo pkcon update -y
 
 echo "${GREEN} install nvidia driver 515${NC} (y/n)"
-read -p "Are you sure? " -n 1 -r
-echo    # (optional) move to a new line
+read -p "Ainstall nvidia driver 515? " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     sudo apt-get install nvidia-driver-515 -y
