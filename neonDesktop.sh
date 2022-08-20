@@ -1,36 +1,15 @@
 #!/bin/bash
-####
 #  Author https://github.com/trevor256
 #  script configs new system
 #  Run on Linux OS (KDE NEON)
-# make a usb      lsblk           sudo dd bs=4M if=Downloads/neon.iso of=sd<?> conv=fdatasync status=progress
-####
-
+#  make a usb lsblk  sudo dd bs=4M if=Downloads/neon.iso of=sd<?> conv=fdatasync status=progress
 GREEN="$(tput setaf 2)"
 NC="$(tput sgr0)"
 
+
 echo "${GREEN} Updating${NC}"
 sudo pkcon update -y
-
-echo "${GREEN} apt install kubectl htop cmus ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv${NC}"
-sudo apt-get install ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv -y
-echo "${GREEN} flatpak install kdenlive Blender LibreOffice Discord Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
-sudo flatpak install flathub org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.inkscape.Inkscape org.kde.krita org.godotengine.GFodot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.atlauncher.ATLauncher com.obsproject.Studio -y
-
-echo "${GREEN} Installing nvim${NC}"
-wget --quiet https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage --output-document nvim
-chmod +x nvim
-sudo chown root:root nvim
-sudo mv nvim /usr/bin
-mkdir -p .config/nvim
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-echo "${GREEN} Installing starship and nerdfonts${NC}"
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
-unzip Hack.zip -d ~/.fonts
-fc-cache -fv
-curl -sS https://starship.rs/install.sh | sh
-echo 'eval "$(starship init bash)"' >> .bashrc
+lookandfeeltool -a 'org.kde.breezedark.desktop'
 
 echo "${GREEN} Installing GO${NC}"
 curl -OL https://go.dev/dl/go1.19.linux-amd64.tar.gz
@@ -51,19 +30,11 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip awscliv2.zip
 sudo ./aws/install
 
-echo "${GREEN} Installing AWS EB CLI${NC}"
-sudo pip3 install awsebcli --force-reinstall --upgrade
-
 echo "${GREEN} Installing GCP CLI${NC}"
 sudo apt-get install apt-transport-https ca-certificates gnupg -y
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 sudo curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-sudo apt-get update -y && sudo apt-get install google-cloud-cli -y
-
-echo "${GREEN} Monero CLI${NC}"
-wget https://downloads.getmonero.org/linux64 && tar jxvf linux64 -y
-# ./monerod &
-# ./monero-wallet-cli
+sudo apt-get install google-cloud-cli -y
 
 echo "${GREEN} Solana CLI${NC}"
 sh -c "$(curl -sSfL https://release.solana.com/v1.10.29/install)" -y
@@ -92,11 +63,18 @@ git clone https://github.com/trevor256/BSFSB github/BSFSB/
 git clone https://github.com/trevor256/erupt-0.2.git github/erupt-0.2/
 chmod -R 777 github
 
-echo "${GREEN} Install Xpen${NC}"
-curl https://www.xp-pen.com/download/file/id/1949/pide819/ext/deb.html -o xpen.deb
-sudo dpkg -i xpen.deb
-sudo rm xpen.deb go1.18.1.linux-amd64.tar.gz awscliv2.zip
-lookandfeeltool -a 'org.kde.breezedark.desktop'
+echo "${GREEN} Installing starship and nerdfonts${NC}"
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
+unzip Hack.zip -d ~/.fonts
+fc-cache -fv
+curl -sS https://starship.rs/install.sh | sh
+echo 'eval "$(starship init bash)"' >> .bashrc
+
+rustc cargo
+echo "${GREEN} apt install kubectl htop cmus ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv${NC}"
+sudo apt-get install ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv neovim -y
+echo "${GREEN} flatpak install nvim kdenlive Blender LibreOffice Discord Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
+sudo flatpak install flathub io.neovim.nvim org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.inkscape.Inkscape org.kde.krita org.godotengine.GFodot com.github.unrud.VideoDownloader org.audacityteam.Audacity com.atlauncher.ATLauncher com.obsproject.Studio -y
 
 echo "${GREEN} install nvidia driver 515?${NC} (y/n)"
 read -r reply
@@ -108,5 +86,8 @@ read -r reply
     fi
 
 echo "${GREEN} rebooting......${NC}"
-sudo pkcon update -y
 init 6
+
+# echo "${GREEN} Install Xpen${NC}"
+# curl https://www.xp-pen.com/download/file/id/1949/pide819/ext/deb.html -o xpen.deb
+# sudo dpkg -i xpen.deb
