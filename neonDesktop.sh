@@ -35,8 +35,7 @@ echo 'eval "$(starship init bash)"' >> .bashrc
 echo "${GREEN} Installing GO${NC}"
 curl -OL https://go.dev/dl/go1.19.linux-amd64.tar.gz
 sudo tar -C /usr/local -xvf go1.19.linux-amd64.tar.gz
-echo "export PATH=$PATH:/usr/local/go/bin" >>~/.profile
-. ~/.profile
+echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
 
 echo "${GREEN} Installing Rust, rustc, cargo${NC}"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
