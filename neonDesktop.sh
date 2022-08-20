@@ -70,7 +70,6 @@ fc-cache -fv
 curl -sS https://starship.rs/install.sh | sh
 echo 'eval "$(starship init bash)"' >> .bashrc
 
-rustc cargo
 echo "${GREEN} apt install kubectl htop cmus ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv${NC}"
 sudo apt-get install ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv neovim -y
 echo "${GREEN} flatpak install nvim kdenlive Blender LibreOffice Discord Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
