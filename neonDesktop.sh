@@ -10,6 +10,15 @@ NC="$(tput sgr0)"
 echo "${GREEN} Updating${NC}"
 sudo pkcon update -y
 
+echo "${GREEN} install nvidia driver 515?${NC} (y/n)"
+read -r reply
+  if [ "$reply" = y ] || [ "$reply" = Y ]
+   then
+      sudo apt-get install nvidia-driver-515 -y
+    else
+       echo "${RED}  nvidia driver not installed${NC}"
+    fi
+
 echo "${GREEN} Installing GO${NC}"
 curl -OL https://go.dev/dl/go1.19.linux-amd64.tar.gz
 sudo tar -C /usr/local -xvf go1.19.linux-amd64.tar.gz
@@ -68,24 +77,15 @@ fc-cache -fv
 curl -sS https://starship.rs/install.sh | sh -- -y
 echo 'eval "$(starship init bash)"' >> .bashrc
 
+echo "${GREEN} Install Xpen${NC}"
+curl https://www.xp-pen.com/download/file/id/1949/pide819/ext/deb.html -o xpen.deb
+sudo dpkg -i xpen.deb
+
 echo "${GREEN} apt install kubectl htop cmus ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv${NC}"
 sudo apt-get install ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv rustc cargo -y
 echo "${GREEN} flatpak install nvim kdenlive Blender LibreOffice Discord Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
 sudo flatpak install flathub io.neovim.nvim org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.kde.krita org.godotengine.GFodot -y 
 sudo flatpak install org.inkscape.Inkscape com.github.unrud.VideoDownloader org.audacityteam.Audacity com.atlauncher.ATLauncher com.obsproject.Studio -y
 
-echo "${GREEN} install nvidia driver 515?${NC} (y/n)"
-read -r reply
-  if [ "$reply" = y ] || [ "$reply" = Y ]
-   then
-      sudo apt-get install nvidia-driver-515 -y
-    else
-       echo "${RED}  nvidia driver not installed${NC}"
-    fi
-
 echo "${GREEN} rebooting......${NC}"
 init 6
-
-# echo "${GREEN} Install Xpen${NC}"
-# curl https://www.xp-pen.com/download/file/id/1949/pide819/ext/deb.html -o xpen.deb
-# sudo dpkg -i xpen.deb
