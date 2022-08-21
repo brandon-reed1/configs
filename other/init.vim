@@ -1,3 +1,9 @@
 :set number
-:set relativenumver
+:set relativenumber
 :set mouse=a
+
+call plug#begin()
+
+
+
+call plug#end()
