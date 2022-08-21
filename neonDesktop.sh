@@ -1,8 +1,8 @@
 #!/bin/bash
 #  Author https://github.com/trevor256
 #  script configs new system
-#  Run on Linux OS (KDE NEON)
-#  make a usb lsblk  sudo dd bs=4M if=Downloads/neon.iso of=sd<?> conv=fdatasync status=progress
+#  Run on Linux (KDE NEON)
+#  make a usb   sudo dd bs=4M if=Downloads/neon.iso of=sd<?> conv=fdatasync status=progress
 GREEN="$(tput setaf 2)"
 NC="$(tput sgr0)"
 
@@ -48,13 +48,7 @@ sudo curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key -
 sudo apt update -y
 sudo apt-get install google-cloud-cli -y
 
-echo "${GREEN} Stripe CLI${NC}"
-curl https://packages.stripe.dev/api/security/keypair/stripe-cli-gpg/public | sudo apt-key add -
-echo "deb https://packages.stripe.dev/stripe-cli-debian-local stable main" | sudo tee -a /etc/apt/sources.list
-sudo apt update -y
-sudo apt install stripe -y
-
-echo "${GREEN} docker${NC}"
+echo "${GREEN} Installing Docker${NC}"
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 echo \
@@ -89,5 +83,4 @@ echo "${GREEN} flatpak install nvim kdenlive Blender LibreOffice Discord Inkscap
 sudo flatpak install flathub io.neovim.nvim org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.kde.krita org.godotengine.GFodot -y 
 sudo flatpak install org.inkscape.Inkscape com.github.unrud.VideoDownloader org.audacityteam.Audacity com.atlauncher.ATLauncher com.obsproject.Studio -y
 
-echo "${GREEN} rebooting......${NC}"
 init 6
