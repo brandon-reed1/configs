@@ -5,7 +5,6 @@
 #  make a usb   sudo dd bs=4M if=Downloads/neon.iso of=sd<?> conv=fdatasync status=progress
 GREEN="$(tput setaf 2)"
 NC="$(tput sgr0)"
-lookandfeeltool -a org.kde.breezedark.desktop
 
 function yes_or_no {
     while true; do
@@ -20,7 +19,7 @@ function yes_or_no {
 echo "${GREEN} Updating${NC}"
 sudo pkcon update -y
 
-echo "${GREEN} not install nvidia driver 515${NC}"
+echo "${GREEN} install nvidia driver 515?${NC}"
 yes_or_no "$message" && sudo apt-get install nvidia-driver-515 -y
       
 echo "${GREEN} Installing GO${NC}"
