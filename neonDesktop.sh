@@ -5,6 +5,7 @@
 #  make a usb   sudo dd bs=4M if=Downloads/neon.iso of=sd<?> conv=fdatasync status=progress
 GREEN="$(tput setaf 2)"
 NC="$(tput sgr0)"
+lookandfeeltool -a org.kde.breezedark.desktop
 
 function yes_or_no {
     while true; do
