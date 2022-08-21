@@ -18,15 +18,16 @@ function yes_or_no {
 
 echo "${GREEN} Updating${NC}"
 sudo pkcon update -y
+sudo add-apt-repository ppa:neovim-ppa/unstable
 
 echo "${GREEN} install nvidia driver 515?${NC}"
 yes_or_no "$message" && sudo apt-get install nvidia-driver-515 -y
       
 echo "${GREEN} Installing GO${NC}"
 curl -fsSLo- https://s.id/golang-linux | bash
-export GOROOT="/home/$USER/go"
-export GOPATH="/home/$USER/go/packages"
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export 'GOROOT="/home/$USER/go"' >> .bashrc
+export 'GOPATH="/home/$USER/go/packages"' >> .bashrc
+export 'PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> .bashrc
 
 echo "${GREEN} Installing Rust, rustc, cargo${NC}"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -70,7 +71,7 @@ echo "${GREEN} Installing starship and nerdfonts${NC}"
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
 unzip Hack.zip -d ~/.fonts
 fc-cache -fv
-curl -sS https://starship.rs/install.sh | sh -- -y
+curl -sS https://starship.rs/install.sh | sh -s -- -y
 echo 'eval "$(starship init bash)"' >> .bashrc
 
 echo "${GREEN} Install Xpen${NC}"
@@ -78,9 +79,11 @@ curl https://www.xp-pen.com/download/file/id/1949/pide819/ext/deb.html -o xpen.d
 sudo dpkg -i xpen.deb
 
 echo "${GREEN} apt install ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv${NC}"
-sudo apt-get install ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv rustc cargo -y
+sudo apt-get install neovim ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv rustc cargo -y
 echo "${GREEN} flatpak install nvim kdenlive Blender LibreOffice Discord Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
 sudo flatpak install flathub io.neovim.nvim org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.kde.krita org.godotengine.GFodot -y 
 sudo flatpak install org.inkscape.Inkscape com.github.unrud.VideoDownloader org.audacityteam.Audacity com.atlauncher.ATLauncher com.obsproject.Studio -y
+mkdir .config/nvim/
+curl https://raw.githubusercontent.com/trevor256/MyConfig/main/other/init.vim -o .config/neovim/init.vim
 
 init 6
