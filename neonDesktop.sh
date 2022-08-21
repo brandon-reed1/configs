@@ -85,5 +85,7 @@ sudo flatpak install flathub org.kde.kdenlive org.blender.Blender org.libreoffic
 sudo flatpak install org.inkscape.Inkscape com.github.unrud.VideoDownloader org.audacityteam.Audacity com.atlauncher.ATLauncher com.obsproject.Studio -y
 mkdir .config/nvim/
 curl https://raw.githubusercontent.com/trevor256/MyConfig/main/other/init.vim -o .config/neovim/init.vim
-
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+       
 init 6
