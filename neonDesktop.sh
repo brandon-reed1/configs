@@ -24,6 +24,9 @@ yes_or_no "$message" && sudo apt-get install nvidia-driver-515 -y
       
 echo "${GREEN} Installing GO${NC}"
 curl -fsSLo- https://s.id/golang-linux | bash
+export GOROOT="/home/$USER/go"
+export GOPATH="/home/$USER/go/packages"
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 echo "${GREEN} Installing Rust, rustc, cargo${NC}"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
