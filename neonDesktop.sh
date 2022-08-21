@@ -81,7 +81,7 @@ sudo dpkg -i xpen.deb
 echo "${GREEN} apt install ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv${NC}"
 sudo apt-get install neovim ffmpeg build-essential openjdk-17-jdk openjdk-17-jre python3-pip python3-virtualenv rustc cargo -y
 echo "${GREEN} flatpak install nvim kdenlive Blender LibreOffice Discord Inkscape krita Godot VideoDownloader Audacity Minecraft obs${NC}"
-sudo flatpak install flathub io.neovim.nvim org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.kde.krita org.godotengine.GFodot -y 
+sudo flatpak install flathub org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.kde.krita org.godotengine.GFodot -y 
 sudo flatpak install org.inkscape.Inkscape com.github.unrud.VideoDownloader org.audacityteam.Audacity com.atlauncher.ATLauncher com.obsproject.Studio -y
 mkdir .config/nvim/
 curl https://raw.githubusercontent.com/trevor256/MyConfig/main/other/init.vim -o .config/neovim/init.vim
