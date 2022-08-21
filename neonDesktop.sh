@@ -13,8 +13,9 @@ sudo pkcon update -y
 echo "${GREEN} install nvidia driver 515${NC} (y/n)"
 read -p "Ainstall nvidia driver 515? " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]
-then
     sudo apt-get install nvidia-driver-515 -y
+else 
+    echo "${GREEN} not install nvidia driver 515${NC}
 fi
 
       
