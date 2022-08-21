@@ -23,10 +23,7 @@ echo "${GREEN} install nvidia driver 515?${NC}"
 yes_or_no "$message" && sudo apt-get install nvidia-driver-515 -y
       
 echo "${GREEN} Installing GO${NC}"
-curl -OL https://go.dev/dl/go1.19.linux-amd64.tar.gz
-sudo tar -C /usr/local -xvf go1.19.linux-amd64.tar.gz
-sudo echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bash_profile
-sudo echo "export GOPATH="/mnt/c/Users/${user}/directory/to/your/golang/workspace"" >> ~/.bash_profile
+curl -fsSLo- https://s.id/golang-linux | bash
 
 echo "${GREEN} Installing Rust, rustc, cargo${NC}"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -83,4 +80,5 @@ echo "${GREEN} flatpak install nvim kdenlive Blender LibreOffice Discord Inkscap
 sudo flatpak install flathub io.neovim.nvim org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.kde.krita org.godotengine.GFodot -y 
 sudo flatpak install org.inkscape.Inkscape com.github.unrud.VideoDownloader org.audacityteam.Audacity com.atlauncher.ATLauncher com.obsproject.Studio -y
 
+sudo pkcon update
 init 6
