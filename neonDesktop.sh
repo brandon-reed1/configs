@@ -80,5 +80,4 @@ echo "${GREEN} flatpak install nvim kdenlive Blender LibreOffice Discord Inkscap
 sudo flatpak install flathub io.neovim.nvim org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.kde.krita org.godotengine.GFodot -y 
 sudo flatpak install org.inkscape.Inkscape com.github.unrud.VideoDownloader org.audacityteam.Audacity com.atlauncher.ATLauncher com.obsproject.Studio -y
 
-sudo pkcon update
 init 6
