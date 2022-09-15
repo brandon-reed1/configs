@@ -29,6 +29,10 @@ echo 'GOROOT="/home/$USER/go"' >> .bashrc
 echo 'GOPATH="/home/$USER/go/packages"' >> .bashrc
 echo 'PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> .bashrc
 
+wget https://github.com/tinygo-org/tinygo/releases/download/v0.25.0/tinygo_0.25.0_amd64.deb
+sudo dpkg -i tinygo_0.25.0_amd64.deb
+export PATH=$PATH:/usr/local/bin
+
 echo "${GREEN} Installing Rust, rustc, cargo${NC}"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
