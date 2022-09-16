@@ -2,7 +2,7 @@
 #  Author https://github.com/trevor256
 #  script configs new system
 #  Run on Linux (KDE NEON)
-#  make a usb   sudo dd bs=4M if=Downloads/neon.iso of=sd<?> conv=fdatasync status=progress
+#  make a usb   sudo dd bs=4M if=Downloads/neon.iso of=/dev/sd<?> conv=fdatasync status=progress
 GREEN="$(tput setaf 2)"
 NC="$(tput sgr0)"
 
