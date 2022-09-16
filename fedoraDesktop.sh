@@ -14,12 +14,13 @@ repo_gpgcheck=0
 gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
 
-
+sudo dnf makecache
+sudo dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 sudo dnf upgrade --refresh -y
 sudo dnf -y install go rust cargo nodejs awscli google-cloud-cli docker blender nmap inkscape zsh
  
-
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
 git clone https://github.com/trevor256/trevor256.com.git github/trevor256.com/
