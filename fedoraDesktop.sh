@@ -14,10 +14,12 @@ repo_gpgcheck=0
 gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
 
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 sudo dnf makecache -y
 sudo dnf upgrade --refresh -y
 sudo dnf -y install go rust cargo nodejs awscli google-cloud-cli docker blender nmap inkscape zsh
-sudo dnf -y module install nvidia-driver:latest-dkms
+flatpak install flathub org.kde.krita org.kde.kdenlive com.getpostman.Postman
 
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
