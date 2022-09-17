@@ -14,11 +14,12 @@ repo_gpgcheck=0
 gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
 
-#flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 
 sudo dnf makecache -y
 sudo dnf upgrade --refresh -y
-sudo dnf -y install go rust cargo nodejs awscli google-cloud-cli docker blender nmap inkscape zsh
+sudo dnf -y install go rust cargo nodejs awscli google-cloud-cli docker blender nmap inkscape zsh ffmpeg-libs
 #flatpak install flathub org.kde.krita org.kde.kdenlive com.getpostman.Postman
 
 git config --global user.name "trevor256"
