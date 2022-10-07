@@ -51,8 +51,8 @@ curl https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352
 echo "${GREEN} apt install nodejs, ffmpeg, build-essential${NONE}"
 sudo apt-get install -y nodejs ffmpeg build-essential 
 
-echo "${GREEN} Flatpak install kdenlive, Blender, LibreOffice, Discord, Inkscape, Krita, Godot, Audacity, ATMinecraft, OBS${NONE}"
-sudo flatpak install -y flathub org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord \
+echo "${GREEN} Flatpak install kdenlive, Blender, LibreOffice, Discord, Boxes, Inkscape, Krita, Godot, Audacity, ATMinecraft, OBS${NONE}"
+sudo flatpak install -y flathub org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.gnome.Boxes \
 org.kde.krita org.godotengine.GFodot org.inkscape.Inkscape org.audacityteam.Audacity com.atlauncher.ATLauncher com.obsproject.Studio
        
 init 6
