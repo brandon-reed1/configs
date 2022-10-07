@@ -1,6 +1,6 @@
 # Configure [KDE Neon](https://neon.kde.org/download) Linux Desktop<img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/neon.svg">
 ```bash
-curl -L https://raw.githubusercontent.com/trevor256/MyConfig/main/neonDesktop.sh -o config.sh && sudo bash config.sh
+curl -L https://raw.githubusercontent.com/trevor256/MyConfig/main/neon.sh -o config.sh && sudo bash config.sh
 ```
 
 # Configure [Fedora](https://getfedora.org) Linux Desktop<img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/fedora.svg">
