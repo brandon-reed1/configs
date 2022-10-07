@@ -25,7 +25,7 @@ curl -sL https://deb.nodesource.com/setup_18.x | sudo bash -
 sudo pkcon update -y
 
 echo "${GREEN} Install nvidia driver 515?${NONE}"
-yes_or_no "$@" && sudo apt-get install nvidia-driver-515 -y
+yes_or_no sudo apt-get install nvidia-driver-515 -y
       
 echo "${GREEN} Snap install GO, aws-cli, google-cloud-cli, nvim${NONE}"
 sudo snap install go --classic 
@@ -48,8 +48,8 @@ echo "eval '$(starship init bash)'" >> .bashrc
 echo "${GREEN} Install Huion graphics tablet driver${NONE}"
 curl https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352.x86_64.deb -o huion.deb && sudo dpkg -i huion.deb
 
-echo "${GREEN} apt install nodejs, ffmpeg, build-essential${NONE}"
-sudo apt-get install -y nodejs ffmpeg build-essential 
+echo "${GREEN} apt install nodejs, ffmpeg, build-essential shellcheck${NONE}"
+sudo apt-get install -y nodejs ffmpeg build-essential shellcheck
 
 echo "${GREEN} Flatpak install kdenlive, Blender, LibreOffice, Discord, Boxes, Inkscape, Krita, Godot, Audacity, ATMinecraft, OBS${NONE}"
 sudo flatpak install -y flathub org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.gnome.Boxes \
