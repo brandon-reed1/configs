@@ -11,7 +11,7 @@ NONE="$(tput sgr0)"
 ## Function adds yes or no options to commands
 function yes_or_no {
     while true; do
-        read -p -r "$* [y/n]: " yn
+        read -p "$* [y/n]: " yn
         case $yn in
             [Yy]*) return 0  ;;  
             [Nn]*) echo "Aborted" ; return  1 ;;
