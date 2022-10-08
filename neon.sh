@@ -38,7 +38,6 @@ git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
 mkdir gh
 
-
 echo "${GREEN} Installing starship and nerdfonts${NONE}"
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
 unzip Hack.zip -d ~/.fonts
@@ -47,8 +46,8 @@ curl -sS https://starship.rs/install.sh | sh -s -- -y
 echo "eval '$(starship init bash)'" >> .bashrc
 
 ## https://develop.kde.org/docs/extend/plasma/scripting/templates/
-echo "${GREEN} Changing KDE NEON settings${NONE}"
-lookandfeeltool -a 'org.kde.breeze.desktop' --resetLayout
+#echo "${GREEN} Changing KDE NEON settings${NONE}"
+#lookandfeeltool -a 'org.kde.breeze.desktop' --resetLayout
 
 echo "${GREEN} Install Huion graphics tablet driver${NONE}"
 curl https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352.x86_64.deb -o huion.deb && sudo dpkg -i huion.deb
