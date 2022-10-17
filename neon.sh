@@ -56,7 +56,7 @@ echo "${GREEN} apt install nodejs, ffmpeg, build-essential shellcheck${NONE}"
 sudo apt-get install -y nodejs ffmpeg build-essential shellcheck
 
 echo "${GREEN} Flatpak install kdenlive, Blender, LibreOffice, Discord, Boxes, Inkscape, Krita, postman, Godot, Audacity, ATMinecraft, OBS${NONE}"
-sudo flatpak install -y flathub org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.gnome.Boxes \
+sudo flatpak install -y flathub org.kde.kdenlive org.blender.Blender org.libreoffice.LibreOffice com.discordapp.Discord org.gnome.Boxes md.obsidian.Obsidian \
 com.getpostman.Postman org.kde.krita org.godotengine.GFodot org.inkscape.Inkscape org.audacityteam.Audacity com.atlauncher.ATLauncher com.obsproject.Studio
        
 init 6
