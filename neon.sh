@@ -25,7 +25,7 @@ curl -sL https://deb.nodesource.com/setup_18.x | sudo bash -
 sudo pkcon update -y
 
 echo "${GREEN} Install nvidia driver 515?${NONE}"
-yes_or_no sudo apt-get install nvidia-driver-515 -y
+yes_or_no sudo apt-get install nvidia-driver-515
       
 echo "${GREEN} Snap install GO, aws-cli, google-cloud-cli, nvim${NONE}"
 sudo snap install go --classic 
