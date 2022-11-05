@@ -24,10 +24,16 @@ curl -O https://us.download.nvidia.com/XFree86/Linux-x86_64/515.76/NVIDIA-Linux-
 sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
 sudo update-initramfs -u
+sudo apt-key del 7fa2af80
+curl -O https://developer.download.nvidia.com/compute/cuda/repos/debian11/x86_64/cuda-keyring_1.0-1_all.deb
+sudo dpkg -i cuda-keyring_1.0-1_all.deb
+sudo apt-get update
+sudo apt-get -y install cuda
 
 # run on boot to install new drivers
 # sudo sh NVIDIA-Linux-x86_64-515.76.run
-# sudo apt-get -y install cuda
+# grub boot init 3 install command
+
 
 echo "${GREEN}Huion tablet driver${NONE}"
 curl https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352.x86_64.deb -o huion.deb && sudo dpkg -i huion.deb
