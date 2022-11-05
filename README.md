@@ -1,3 +1,7 @@
+# Configure [Debian](https://neon.kde.org/download) Linux Desktop<img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/debian.svg">
+```bash
+curl -L https://raw.githubusercontent.com/trevor256/MyConfig/main/debian.sh -o config.sh && sudo bash config.sh
+```
 # Configure [KDE Neon](https://neon.kde.org/download) Linux Desktop<img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/neon.svg">
 ```bash
 curl -L https://raw.githubusercontent.com/trevor256/MyConfig/main/neon.sh -o config.sh && sudo bash config.sh
