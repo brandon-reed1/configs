@@ -31,7 +31,7 @@ sudo apt-get update
 sudo apt-get -y install cuda
 
 # run on boot to install new drivers
-# sudo sh NVIDIA-Linux-x86_64-515.76.run
+# sudo apt-get -y install cuda
 # grub boot init 3 install command
 
 
