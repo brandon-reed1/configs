@@ -9,15 +9,12 @@ GREEN="$(tput setaf 2)"
 NONE="$(tput sgr0)"
 
 echo "${GREEN}nonfree repositories and updating${NONE}"
-#sudo apt install wget
 sudo apt-add-repository non-free
 sudo apt-add-repository contrib
+sudo apt-get update -y && sudo -y apt-get upgrade
 echo "deb https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-#wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda-repo-debian11-11-8-local_11.8.0-520.61.05-1_amd64.deb && sudo dpkg -i cuda-repo-debian11-11-8-local_11.8.0-520.61.05-1_amd64.deb
-#sudo cp /var/cuda-repo-debian11-11-8-local/cuda-*-keyring.gpg /usr/share/keyrings/
 sudo apt-get update -y && sudo -y apt-get upgrade
-
 
 echo "${GREEN}git config${NONE}"
 git config --global user.name "trevor256"
@@ -27,10 +24,6 @@ mkdir Desktop/gh
 echo "${GREEN}nvidia drivers${NONE}"
 curl -O https://us.download.nvidia.com/XFree86/Linux-x86_64/515.76/NVIDIA-Linux-x86_64-515.76.run
 sudo sh NVIDIA-Linux-x86_64-515.76.run
-#sudo apt install -y nvidia-detect
-#sudo apt install -y nvidia-driver
-#sudo apt-get -y install cuda
-
 
 echo "${GREEN}Huion tablet driver${NONE}"
 curl https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352.x86_64.deb -o huion.deb && sudo dpkg -i huion.deb
