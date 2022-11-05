@@ -12,7 +12,6 @@ echo "${GREEN}nonfree repositories and updating${NONE}"
 sudo apt-add-repository non-free
 sudo apt-add-repository contrib
 sudo apt-get update -y && sudo -y apt-get upgrade
-echo "deb https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get update -y && sudo -y apt-get upgrade
 
@@ -29,8 +28,7 @@ echo "${GREEN}Huion tablet driver${NONE}"
 curl https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352.x86_64.deb -o huion.deb && sudo dpkg -i huion.deb
 
 echo "${GREEN}install nodejs, ffmpeg, build-essential shellcheck${NONE}"
-sudo apt-get install -y flatpak nodejs ffmpeg build-essential shellcheck pulseaudio google-cloud-cli /
-pulseaudio-module-bluetooth pavucontrol bluez-firmware apt-transport-https ca-certificates gnupg
+sudo apt-get install -y flatpak nodejs ffmpeg build-essential shellcheck pulseaudio pulseaudio-module-bluetooth pavucontrol bluez-firmware
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 echo "${GREEN}Flatpak install Blender, Discord, Boxes, Inkscape, Krita, postman, Godot, ATMinecraft, OBS${NONE}"
@@ -51,3 +49,8 @@ echo "${GREEN}aws-cli ${NONE}"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install 
+
+echo "${GREEN}gcp-cli ${NONE}"
+curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-408.0.1-linux-x86_64.tar.gz
+tar -xf google-cloud-cli-408.0.1-linux-x86_64.tar.gz
+./google-cloud-sdk/install.sh
