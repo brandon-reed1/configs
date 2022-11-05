@@ -12,7 +12,7 @@ echo "${GREEN}nonfree repositories and updating${NONE}"
 sudo apt-add-repository non-free
 sudo apt-add-repository contrib
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt-get update -y && sudo -y apt-get upgrade
+sudo apt-get update -y && sudo apt-get upgrade
 
 echo "${GREEN}git config${NONE}"
 git config --global user.name "trevor256"
