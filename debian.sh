@@ -21,8 +21,8 @@ git config --global user.email "256trevor@gmail.com"
 mkdir Desktop/gh
 
 echo "${GREEN}nvidia drivers${NONE}"
-curl -O https://us.download.nvidia.com/XFree86/Linux-x86_64/515.76/NVIDIA-Linux-x86_64-515.76.run
-sudo sh NVIDIA-Linux-x86_64-515.76.run
+curl -O https://us.download.nvidia.com/XFree86/Linux-x86_64/470.141.03/NVIDIA-Linux-x86_64-470.141.03.run
+sudo sh NVIDIA-Linux-x86_64-470.141.03.run
 
 echo "${GREEN}Huion tablet driver${NONE}"
 curl https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352.x86_64.deb -o huion.deb && sudo dpkg -i huion.deb
