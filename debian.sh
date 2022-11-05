@@ -20,13 +20,13 @@ git config --global user.email "256trevor@gmail.com"
 mkdir Desktop/gh
 
 echo "${GREEN}nvidia drivers${NONE}"
-#curl -O https://us.download.nvidia.com/XFree86/Linux-x86_64/470.141.03/NVIDIA-Linux-x86_64-470.141.03.run
-#sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
-#sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
-#sudo update-initramfs -u
+curl -O https://us.download.nvidia.com/XFree86/Linux-x86_64/515.76/NVIDIA-Linux-x86_64-515.76.run
+sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
+sudo update-initramfs -u
 
 # run on boot to install new drivers
-#sudo sh NVIDIA-Linux-x86_64-470.141.03.run
+#sudo sh NVIDIA-Linux-x86_64-515.76.run
 
 echo "${GREEN}Huion tablet driver${NONE}"
 curl https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352.x86_64.deb -o huion.deb && sudo dpkg -i huion.deb
