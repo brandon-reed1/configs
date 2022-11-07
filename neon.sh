@@ -8,24 +8,12 @@
 GREEN="$(tput setaf 2)"
 NONE="$(tput sgr0)"
 
-## Function adds yes or no options to commands
-function yes_or_no {
-    while true; do
-        read -p "$* [y/n]: " yn
-        case $yn in
-            [Yy]*) return 0  ;;  
-            [Nn]*) echo "Aborted" ; return  1 ;;
-        esac
-    done
-}
-
-
 echo "${GREEN} Adding repositories and updating${NONE}"
 curl -sL https://deb.nodesource.com/setup_18.x | sudo bash -
 sudo pkcon update -y
 
 echo "${GREEN} Install nvidia driver 515?${NONE}"
-yes_or_no sudo apt-get install nvidia-driver-515
+sudo apt-get install nvidia-driver-515
       
 echo "${GREEN} Snap install GO, aws-cli, google-cloud-cli, nvim${NONE}"
 sudo snap install go --classic 
