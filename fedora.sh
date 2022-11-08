@@ -21,6 +21,9 @@ sudo dnf upgrade --refresh -y
 sudo dnf -y install go nodejs awscli google-cloud-cli blender nmap inkscape timeshift
 sudo flatpak install flathub org.kde.krita com.getpostman.Postman com.discordapp.Discord org.godotengine.GFodot com.atlauncher.ATLauncher com.obsproject.Studio -y
 
+sudo dnf install akmod-nvidia
+sudo dnf install xorg-x11-drv-nvidia-cuda
+
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
 mkdir gh
