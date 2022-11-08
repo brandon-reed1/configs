@@ -14,9 +14,6 @@ repo_gpgcheck=0
 gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
 
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-
 sudo dnf makecache -y
 sudo dnf upgrade --refresh -y
 sudo dnf -y install go nodejs awscli google-cloud-cli blender nmap inkscape ffmpeg-libs
