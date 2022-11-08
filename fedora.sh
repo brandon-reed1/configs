@@ -24,6 +24,4 @@ git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
 mkdir gh
 
-echo "${GREEN}${bold} rebooting......${NC}${normal}"
 sudo dnf upgrade --refresh -y
-reboot
