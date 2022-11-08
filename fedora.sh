@@ -18,7 +18,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 sudo dnf makecache -y
 sudo dnf upgrade --refresh -y
-sudo dnf -y install go nodejs awscli google-cloud-cli blender nmap inkscape
+sudo dnf -y install go nodejs awscli google-cloud-cli blender nmap inkscape timeshift
 sudo flatpak install flathub org.kde.krita com.getpostman.Postman com.discordapp.Discord org.godotengine.GFodot com.atlauncher.ATLauncher com.obsproject.Studio -y
 
 git config --global user.name "trevor256"
