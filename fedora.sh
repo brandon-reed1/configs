@@ -24,5 +24,5 @@ sudo flatpak install flathub org.kde.krita com.getpostman.Postman com.discordapp
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
 mkdir gh
-
+sudo chmod 777 gh
 sudo dnf upgrade --refresh -y
