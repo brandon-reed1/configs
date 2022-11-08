@@ -19,18 +19,13 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
 
 sudo dnf makecache -y
 sudo dnf upgrade --refresh -y
-sudo dnf -y install go rust cargo nodejs awscli google-cloud-cli docker blender nmap inkscape zsh ffmpeg-libs
-#flatpak install flathub org.kde.krita org.kde.kdenlive com.getpostman.Postman
+sudo dnf -y install go rust cargo nodejs awscli google-cloud-cli blender nmap inkscape ffmpeg-libs
+sudo flatpak install flathub org.kde.krita com.getpostman.Postman com.discordapp.Discord org.godotengine.GFodot \
+com.atlauncher.ATLauncher com.obsproject.Studio
 
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
-
-echo "starship and nerdfonts"
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
-unzip Hack.zip -d ~/.fonts
-fc-cache -fv
-curl -sS https://starship.rs/install.sh | sh -s -- -y
-echo 'eval "$(starship init bash)"' >> .bashrc
+mkdir gh
 
 echo "${GREEN}${bold} rebooting......${NC}${normal}"
 sudo dnf upgrade --refresh -y
