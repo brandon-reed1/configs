@@ -14,11 +14,12 @@ repo_gpgcheck=0
 gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
 
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 sudo dnf makecache -y
 sudo dnf upgrade --refresh -y
-sudo dnf -y install go nodejs awscli google-cloud-cli blender nmap inkscape ffmpeg-libs
-sudo flatpak install flathub org.kde.krita com.getpostman.Postman com.discordapp.Discord org.godotengine.GFodot \
-com.atlauncher.ATLauncher com.obsproject.Studio
+sudo dnf -y install go nodejs awscli google-cloud-cli blender nmap inkscape
+sudo flatpak install flathub org.kde.krita com.getpostman.Postman com.discordapp.Discord org.godotengine.GFodot com.atlauncher.ATLauncher com.obsproject.Studio -y
 
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
