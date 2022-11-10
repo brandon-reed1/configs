@@ -17,6 +17,7 @@ echo "${GREEN}git config${NONE}"
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
 mkdir gh
+chmod 777 -R gh
 
 echo "${GREEN}Huion tablet driver${NONE}"
 curl https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352.x86_64.deb -o huion.deb && sudo dpkg -i huion.deb
