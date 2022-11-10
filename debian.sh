@@ -2,7 +2,6 @@
 ##  Author: https://github.com/trevor256
 ##  Usage: run on debian
 ##  make a usb sudo dd bs=4M if=Downloads/debian.iso of=/dev/sd<?> conv=fdatasync status=progress 
-##
 
 ## Adds green to echos
 GREEN="$(tput setaf 2)"
@@ -18,21 +17,6 @@ echo "${GREEN}git config${NONE}"
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
 mkdir gh
-
-echo "${GREEN}nvidia drivers${NONE}"
-curl -O https://us.download.nvidia.com/XFree86/Linux-x86_64/515.76/NVIDIA-Linux-x86_64-515.76.run
-sudo bash -c "echo blacklist nouveau > /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
-sudo bash -c "echo options nouveau modeset=0 >> /etc/modprobe.d/blacklist-nvidia-nouveau.conf"
-sudo update-initramfs -u
-sudo apt-key del 7fa2af80
-curl -O https://developer.download.nvidia.com/compute/cuda/repos/debian11/x86_64/cuda-keyring_1.0-1_all.deb
-sudo dpkg -i cuda-keyring_1.0-1_all.deb
-sudo apt-get update
-sudo apt-get install cuda
-
-# run on boot to install new drivers
-# sudo apt-get -y install cuda
-# grub boot init 3 install command
 
 echo "${GREEN}Huion tablet driver${NONE}"
 curl https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352.x86_64.deb -o huion.deb && sudo dpkg -i huion.deb
@@ -58,3 +42,12 @@ echo "${GREEN}gcp-cli ${NONE}"
 curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-408.0.1-linux-x86_64.tar.gz
 tar -xf google-cloud-cli-408.0.1-linux-x86_64.tar.gz
 ./google-cloud-sdk/install.sh
+
+echo "${GREEN}nvidia drivers${NONE}"
+sudo apt autoremove $(dpkg -l nvidia-driver* |grep ii |awk '{print $2}')
+curl -O https://us.download.nvidia.com/XFree86/Linux-x86_64/515.76/NVIDIA-Linux-x86_64-515.76.run
+chmod +x NVIDIA-Linux-x86_64-515.76.run
+sudo apt install linux-headers-$(uname -r) gcc make acpid dkms libglvnd-core-dev libglvnd0 libglvnd-dev dracut
+echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf
+sudo init 3
+./NVIDIA-Linux-x86_64-515.76.run
