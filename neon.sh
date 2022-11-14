@@ -24,6 +24,9 @@ sudo snap install nvim --classic
 echo "${GREEN} Downloading github projects to /github dir${NONE}"
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
+echo "input github token:"
+read gittoken
+sudo echo 'GITHUB_TOKEN="'$gittoken'"' >> .bashrc
 mkdir gh
 
 echo "${GREEN} Installing starship and nerdfonts${NONE}"
