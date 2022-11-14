@@ -16,6 +16,9 @@ sudo apt-get update -y && sudo apt-get upgrade
 echo "${GREEN}git config${NONE}"
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
+echo "input github token:"
+read gittoken
+sudo echo 'GITHUB_TOKEN="'$gittoken'"' >> .bashrc
 mkdir gh
 chmod 777 -R gh
 
