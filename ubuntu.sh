@@ -7,6 +7,8 @@
 ## Adds green to echos
 GREEN="$(tput setaf 2)"
 NONE="$(tput sgr0)"
+
+sudo add-apt-repository ppa:appimagelauncher-team/stable
 sudo apt update && sudo apt upgrade
 
 #Radeon™ Software for Linux® version 22.40 for Ubuntu 22.04.1
@@ -29,8 +31,7 @@ sudo snap install postman --classic
 sudo snap install obs-studio --classic
 sudo snap install inkscape --classic
 sudo snap install code --classic
-sudo apt install git ffmpeg -y
-
+sudo apt install git ffmpeg appimagelauncher -y
 
 echo "${GREEN} Downloading github projects to /github dir${NONE}"
 git config --global user.name "trevor256"
