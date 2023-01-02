@@ -43,6 +43,6 @@ sudo echo 'password = '$gittoken'' >> .gitconfig
 mkdir gh
 
 echo "${GREEN} Install Huion graphics tablet driver${NONE}"
-curl https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352.x86_64.deb -o huion.deb && sudo dpkg -i huion.deb
+wget https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352.x86_64.deb && sudo dpkg -i HuionTablet_v15.0.0.89.202205241352.x86_64.deb
 
 init 6
