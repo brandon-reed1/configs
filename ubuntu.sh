@@ -1,6 +1,6 @@
 #!/bin/bash
 ##  Author: https://github.com/trevor256
-##  Usage: run on Ubuntu 22.04.1
+##  Usage: run on Ubuntu
 ##  make a usb 
 ##  sudo dd bs=4M if=Downloads/ubuntu.iso of=/dev/sd<?> conv=fdatasync status=progress 
 
