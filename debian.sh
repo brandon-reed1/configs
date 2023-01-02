@@ -55,3 +55,4 @@ sudo apt install linux-headers-$(uname -r) gcc make acpid dkms libglvnd-core-dev
 echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf
 sudo init 3
 ./NVIDIA-Linux-x86_64-515.76.run
+wethrwth
