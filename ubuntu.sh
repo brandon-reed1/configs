@@ -37,4 +37,7 @@ echo "${GREEN} Snap install GO, Node, aws-cli, google-cloud-cli, blender, discor
     sudo snap install code --classic
     sudo snap install timeshift --classic
 
+git config --global user.name "trevor256"
+git config --global user.email "256trevor@gmail.com"
+
     init 6
