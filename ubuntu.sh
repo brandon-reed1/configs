@@ -23,7 +23,7 @@ echo "${GREEN} No HIP blender fix${NONE}"
 
 echo "${GREEN} Snap install GO, Node, aws-cli, google-cloud-cli, blender, discord, krita, postman, obs, inkscape, VScode${NONE}"
     sudo snap set system experimental.parallel-instances=true
-    sudo apt install git ffmpeg -y
+    sudo apt install git ffmpeg mysql-client-core-8.0 -y
     sudo snap install go --classic 
     sudo snap install node --classic
     sudo snap install aws-cli --classic 
