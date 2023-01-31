@@ -14,10 +14,16 @@ bold=$(tput bold)   #bold text
 normal=$(tput sgr0) #normal text
 
 echo "${GREEN}${bold} Updating..${NC}${normal}"
+sudo add-apt-repository universe
 
-sudo apt-get update && sudo apt-get upgrade
-sudo apt install kodi samba smbclient cifs-utils virt-manager selinux-basics selinux-policy-default auditd
-# https://wiki.debian.org/Kodi
+sudo apt update && sudo apt upgrade -y
+sudo apt install tinyproxy nvidia-driver ffmpeg cockpit samba smbclient cifs-utils selinux-basics selinux-policy-default auditd -y
+wget -O- https://repo.jellyfin.org/install-debuntu.sh | sudo bash
+
+transmission-cli
+
+nano /etc/ssh/sshd_config
+PermitRootLogin
 
 sudo mkdir /public /private
 sudo printf "[public]
