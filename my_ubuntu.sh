@@ -10,8 +10,16 @@
 
     sudo apt update && sudo apt upgrade
 
-echo "${GREEN} Install Radeon & Huion graphics tablet driver${NONE}"
-    #Radeon™ Software for Linux® version 22.40 for Ubuntu 22.04.1
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++
+
     wget https://repo.radeon.com/amdgpu-install/22.40/ubuntu/jammy/amdgpu-install_5.4.50401-1_all.deb https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352.x86_64.deb
     sudo dpkg -i HuionTablet_v15.0.0.89.202205241352.x86_64.deb amdgpu-install_5.4.50401-1_all.deb
     amdgpu-install -y
