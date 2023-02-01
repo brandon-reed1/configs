@@ -1,9 +1,0 @@
-   Static hostname: ip-172-31-95-45
-         Icon name: computer-vm
-           Chassis: vm
-        Machine ID: ec2a406f366e76d7dae20e8edbbfc5ec
-           Boot ID: 61e0d2ad4f77402d944756936e31fc8d
-    Virtualization: xen
-  Operating System: Ubuntu 18.04.6 LTS
-            Kernel: Linux 5.4.0-1092-aws
-      Architecture: x86-64
