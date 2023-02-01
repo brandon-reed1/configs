@@ -28,7 +28,7 @@ sudo apt-get install -y flatpak nodejs ffmpeg pulseaudio pulseaudio-module-bluet
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 echo "${GREEN}Flatpak install Blender, Discord, Boxes, Inkscape, Krita, postman, podman, Godot, ATMinecraft, OBS${NONE}"
-sudo flatpak install -y flathub org.blender.Blender com.discordapp.Discord org.gnome.Boxes com.getpostman.Postman org.kde.krita org.godotengine.GFodot org.inkscape.Inkscape com.atlauncher.ATLauncher com.obsproject.Studio
+sudo flatpak install -y flathub io.podman_desktop.PodmanDesktop org.blender.Blender com.discordapp.Discord org.gnome.Boxes com.getpostman.Postman org.kde.krita org.godotengine.GFodot org.inkscape.Inkscape com.atlauncher.ATLauncher com.obsproject.Studio
 
 echo "${GREEN}golang ${NONE}"
 
