@@ -12,24 +12,23 @@
 GREEN="$(tput setaf 2)"
 NONE="$(tput sgr0)"
 
+apt install curl -y
+
 echo "${GREEN}adding nonfree repositories and updating${NONE}"
 sudo apt-add-repository non-free
 sudo apt-add-repository contrib
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - #update nodejs repo
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get update -y && sudo apt-get upgrade -y
 
 echo "${GREEN}Huion tablet driver${NONE}"
 curl https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352.x86_64.deb -o huion.deb && sudo dpkg -i huion.deb
 
-echo "${GREEN}install flatpak nodejs, golang, tree, ffmpeg, build-essential, shellcheck, bluetooth drivers podman${NONE}"
-sudo apt-get install -y flatpak podman gnome-software-plugin-flatpak nodejs golang-go tree ffmpeg build-essential shellcheck pulseaudio pulseaudio-module-bluetooth pavucontrol bluez-firmware
+echo "${GREEN}install flatpak nodejs, golang, tree, ffmpeg, build-essential, bluetooth drivers${NONE}"
+sudo apt-get install -y flatpak nodejs ffmpeg pulseaudio pulseaudio-module-bluetooth bluez-firmware
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-echo "${GREEN}Flatpak install Blender, Discord, Boxes, Inkscape, Krita, postman, Godot, ATMinecraft, OBS${NONE}"
-sudo flatpak install -y flathub org.blender.Blender \
-com.discordapp.Discord org.gnome.Boxes \
-com.getpostman.Postman org.kde.krita org.godotengine.GFodot \
-org.inkscape.Inkscape com.atlauncher.ATLauncher com.obsproject.Studio \
+echo "${GREEN}Flatpak install Blender, Discord, Boxes, Inkscape, Krita, postman, podman, Godot, ATMinecraft, OBS${NONE}"
+sudo flatpak install -y flathub org.blender.Blender com.discordapp.Discord org.gnome.Boxes com.getpostman.Postman org.kde.krita org.godotengine.GFodot org.inkscape.Inkscape com.atlauncher.ATLauncher com.obsproject.Studio
 
 echo "${GREEN}golang ${NONE}"
 
