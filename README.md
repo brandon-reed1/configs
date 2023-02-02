@@ -1,6 +1,6 @@
 # Configure [Debian](https://neon.kde.org/download) Linux Desktop<img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/debian.svg">
 ```bash
-wget https://raw.githubusercontent.com/trevor256/myconfigs/main/my_debian.sh
+curl -L  https://raw.githubusercontent.com/trevor256/myconfigs/main/my_debian.sh -o my_debian.sh && sudo bash my_debian.sh
 ```
 # Configure [KDE Neon](https://neon.kde.org/download) Linux Desktop<img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/neon.svg">
 ```bash
