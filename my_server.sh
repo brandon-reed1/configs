@@ -9,8 +9,8 @@
 ###################################################################
 
 # Adds green to echos
-GREEN="$(tput setaf 2)"
-NONE="$(tput sgr0)"
+      GREEN="$(tput setaf 2)"
+      NONE="$(tput sgr0)"
 
 echo "${GREEN} Updating..${NC}"
       sudo add-apt-repository universe
@@ -22,7 +22,7 @@ echo "${GREEN} Updating..${NC}"
       usermod -aG mygroup olivia  #make permitions on group
 
 # Podman
-      sudo apt install podman -y
+      sudo apt install podman apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 
 # cockpit managment cockpit-selinux cockpit-networkmanager
       wget -qO - https://repo.45drives.com/key/gpg.asc | sudo gpg --dearmor -o /usr/share/keyrings/45drives-archive-keyring.gpg
@@ -31,23 +31,6 @@ echo "${GREEN} Updating..${NC}"
       sudo apt update
       
       apt install cockpit cockpit-podman cockpit-navigator -y
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #Torrent Server
 
