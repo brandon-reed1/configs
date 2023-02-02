@@ -20,13 +20,29 @@ sudo apt-add-repository contrib
 sudo apt-get update && sudo apt-get upgrade -y
 
 echo "${GREEN}install flatpak nodejs, ffmpeg, build-essential, bluetooth drivers${NONE}"
-sudo apt install -y flatpak ca-certificates curl gnupg lsb-release nodejs ffmpeg pulseaudio pulseaudio-module-bluetooth bluez-firmware openjdk-17-jdk openjdk-17-jre
+sudo apt install -y flatpak ca-certificates curl gnupg lsb-release ffmpeg pulseaudio pulseaudio-module-bluetooth bluez-firmware 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
 sudo apt-get update && sudo apt-get upgrade -y
 
 echo "${GREEN}Flatpak install Blender, Discord, Boxes, Inkscape, Krita, postman, podman, Godot, ATMinecraft, OBS${NONE}"
-sudo flatpak install -y flathub io.podman_desktop.PodmanDesktop org.blender.Blender com.discordapp.Discord org.gnome.Boxes com.getpostman.Postman org.kde.krita org.godotengine.GFodot org.inkscape.Inkscape com.atlauncher.ATLauncher com.obsproject.Studio
+sudo flatpak install -y /
+flathub org.blender.Blender /
+com.visualstudio.code /
+com.discordapp.Discord /
+org.gnome.Boxes /
+com.getpostman.Postman /
+org.kde.krita /
+org.godotengine.GFodot /
+org.inkscape.Inkscape /
+com.atlauncher.ATLauncher /
+com.obsproject.Studio
+
+echo "${GREEN}nodejs${NONE}"
+curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+sudo apt update && sudo apt install nodejs -y
+
+echo "${GREEN}Java${NONE}"
+sudo apt install openjdk-17-jdk openjdk-17-jre
 
 echo "${GREEN}Docker ${NONE}"
 sudo mkdir -p /etc/apt/keyrings
