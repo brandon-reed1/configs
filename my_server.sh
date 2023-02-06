@@ -24,14 +24,32 @@ echo "${GREEN} Updating..${NC}"
 # Podman
       sudo apt install podman apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 
+podman run \
+ --detach \
+ --label "io.containers.autoupdate=registry" \
+ --name myjellyfin \
+ --publish 8096:8096/tcp \
+ --rm \
+ --user $(id -u):$(id -g) \
+ --userns keep-id \
+ --volume jellyfin-cache:/cache:Z \
+ --volume jellyfin-config:/config:Z \
+ --mount type=bind,source=/path/to/media,destination=/media,ro=true \
+ docker.io/jellyfin/jellyfin:latest
+
 # cockpit managment cockpit-selinux cockpit-networkmanager
       wget -qO - https://repo.45drives.com/key/gpg.asc | sudo gpg --dearmor -o /usr/share/keyrings/45drives-archive-keyring.gpg
       cd /etc/apt/sources.list.d
       sudo curl -sSL https://repo.45drives.com/lists/45drives.sources -o /etc/apt/sources.list.d/45drives.sources
       sudo apt update
-      
       apt install cockpit cockpit-podman cockpit-navigator -y
 
+
+# jellyfin 
+      docker pull jellyfin/jellyfin
+      mkdir /jellyconfig
+      mkdir /jellycache
+      docker compose up
 #Torrent Server
 
 sudo apt-get transmission-cli transmission-common transmission-daemon
