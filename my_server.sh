@@ -12,6 +12,8 @@
 GREEN="$(tput setaf 2)"
 NONE="$(tput sgr0)"
 
+usermod –aG sudo trevor
+
 echo "${GREEN}Updating${NC}" #updates
 apt install software-properties-common
 apt-add-repository non-free 
@@ -19,6 +21,8 @@ apt-add-repository contrib
 apt update && apt upgrade -y
 
 echo "${GREEN}mount drives ${NC}" #mount drives
+mkdir cache
+mkdir config
 mkdir share
 mount /dev/sdb /share/drive1
 mount /dev/sdc /share/drive2
@@ -41,7 +45,7 @@ podman run \
  --name myjellyfin \
  --publish 8096:8096/tcp \
  --rm \
- --user $(id -u):$(id -g) \ 
+ --user $(id -u):$(id -g) \
  --userns keep-id \
  --volume jellyfin-cache:/cache:Z \
  --volume jellyfin-config:/config:Z \
@@ -49,7 +53,7 @@ podman run \
  docker.io/jellyfin/jellyfin:latest
 
 #podman generate systemd
-podman generate systemd --new --name myjellyfin > ~/.config/systemd/user/container-myjellyfin.service
+podman generate systemd --new --name myjellyfin > /etc/systemd/system/container-myjellyfin.service
 podman stop myjellyfin
 systemctl --user enable --now container-myjellyfin.service
 loginctl enable-linger $USER
