@@ -1,6 +1,6 @@
 # Configure [Debian](https://neon.kde.org/download) Linux Desktop<img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/debian.svg">
 ```bash
-curl -L  https://raw.githubusercontent.com/trevor256/myconfigs/main/my_debian.sh -o my_debian.sh && sudo bash my_debian.sh
+curl -L https://raw.githubusercontent.com/trevor256/myconfigs/main/my_ubuntu.sh | sudo bash 
 ```
 # Configure Windows [10](https://neon.kde.org/download) Desktop <img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/win.svg">
 
