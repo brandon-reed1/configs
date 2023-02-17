@@ -19,13 +19,9 @@ echo "${GREEN} Snap install GO, Node, aws-cli, google-cloud-cli, blender, discor
     sudo snap install obs-studio --classic
     sudo snap install inkscape --classic
     sudo snap install code --classic
-    sudo snap install timeshift --classic
     sudo snap install steam --edge
-    sudo snap install kdenlive
+    sudo snap install kdenlive 
     sudo snap install terraform --classic
-
-git config --global user.name "trevor256"
-git config --global user.email "256trevor@gmail.com"
 
 #Downloads radeon GPU and huion tablet drivers
     wget https://repo.radeon.com/amdgpu-install/22.40/ubuntu/jammy/amdgpu-install_5.4.50401-1_all.deb https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352.x86_64.deb
@@ -36,3 +32,6 @@ git config --global user.email "256trevor@gmail.com"
 # https://askubuntu.com/questions/1434988/blender-3-3-does-not-recognize-my-gpu-for-hip-on-ubuntu-20-04
     sudo usermod -a -G video $USER 
     sudo usermod -a -G render $USER
+
+    git config --global user.name "trevor256"
+    git config --global user.email "256trevor@gmail.com"
