@@ -22,6 +22,7 @@ echo "${GREEN} Snap install GO, Node, aws-cli, google-cloud-cli, blender, discor
     sudo snap install timeshift --classic
     sudo snap install steam --edge
     sudo snap install kdenlive
+    sudo snap install terraform --classic
 
 git config --global user.name "trevor256"
 git config --global user.email "256trevor@gmail.com"
