@@ -5,9 +5,9 @@ services:
     user: $UID:$GUID
     network_mode: 'host'
     volumes:
-      - /share:/config
-      - /share:/cache
-      - /share:/media
+      - /drive/media3/jellyconfig:/config
+      - /drive/media3/jellycache:/cache
+      - /drive:/media
     restart: 'unless-stopped'
     deploy:
       resources:
