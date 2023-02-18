@@ -40,11 +40,11 @@ sudo nvidia-ctk runtime configure --runtime=docker
 sudo systemctl restart docker
 
 #penpot 
-wget https://raw.githubusercontent.com/penpot/penpot/main/docker/images/docker-compose.yaml
-sudo docker compose -p penpot -f docker-compose.yaml up -d
+wget https://raw.githubusercontent.com/
+sudo docker compose -p penpot -f penpot.yaml up -d
 
 #jellyfin
-wget #jellyfin.yaml
+wget https://raw.githubusercontent.com/
 sudo docker compose -p jellyfin -f jellyfin.yaml up -d
 
 #nextcloud
