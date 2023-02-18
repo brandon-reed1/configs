@@ -5,41 +5,46 @@
 #  Linux OS (Debian)
 #
 #  Applications
-#  PXE Server, torrent, podman, jellyfin, firewall, samba file share,
+#  Docker, jellyfin, firewall, torrent
 ###################################################################
 
-# Adds green to echos
-GREEN="$(tput setaf 2)"
-NONE="$(tput sgr0)"
-
-echo "${GREEN}Starting${NC}" 
 #updates
-apt install software-properties-common
 apt-add-repository non-free 
 apt-add-repository contrib
-apt install -y extrepo
-extrepo enable jellyfin
 apt update && apt upgrade -y
+
+#nvidia Driver
+apt install -y curl nvidia-driver 
+
+#docker
+curl -fsSL get.docker.com | sudo sh
 
 #mount drives
 mkdir share
 mount /dev/sdb /share/drive1
 mount /dev/sdc /share/drive2
 mount /dev/sdd /share/drive3
-
 echo "UUID=f6ed0000-828b-4ba2-af1e-e7e46c8652d5 /share/drive1 ext4 defaults 0 0" >> /etc/fstab
 echo "UUID=d343b798-b1e2-46fd-8900-170dd704429d /share/drive2 ext4 defaults 0 0" >> /etc/fstab
 echo "UUID=aef2f629-845d-4c98-9270-6bf907f07c86 /share/drive3 ext4 defaults 0 0" >> /etc/fstab
 
-#install ufw ffmpeg transmission-cli jellyfin nginx 
-apt install -y ufw ffmpeg transmission-cli jellyfin jellyfin-ffmpeg nginx #transmission-cli "" -w /share/?   kill -p -9
+#nvidia container tool
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+      && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+      && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
+            sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+            sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+sudo apt-get update
+sudo apt-get install -y nvidia-container-toolkit
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
 
-sudo usermod -aG render jellyfin
-sudo systemctl restart jellyfin
+#penpot 
+wget https://raw.githubusercontent.com/penpot/penpot/main/docker/images/docker-compose.yaml
+sudo docker compose -p penpot -f docker-compose.yaml up -d
 
-systemctl restart nginx
+#jellyfin
+wget #jellyfin.yaml
+sudo docker compose -p jellyfin -f jellyfin.yaml up -d
 
-#nvidia Driver
-apt install -y nvidia-driver 
-
-echo "${GREEN}Done${NC}" 
+#nextcloud

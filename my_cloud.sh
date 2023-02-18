@@ -5,9 +5,8 @@
 #  Linux OS (Debian)
 #
 #  Applications
-#   Penpot, nextcloud
+#  docker, penpot, jellyfin, nextcloud,
 ###################################################################
-
 
 sudo apt update && sudo apt upgrade -y
 curl -fsSL get.docker.com | sudo sh
@@ -16,16 +15,7 @@ curl -fsSL get.docker.com | sudo sh
 wget https://raw.githubusercontent.com/penpot/penpot/main/docker/images/docker-compose.yaml
 sudo docker compose -p penpot -f docker-compose.yaml up -d
 
-#nextcloud
-sudo docker run \
---sig-proxy=false \
---name nextcloud-aio-mastercontainer \
---restart always \
---publish 80:80 \
---publish 8080:8080 \
---publish 8443:8443 \
---volume nextcloud_aio_mastercontainer:/mnt/docker-aio-config \
---volume /var/run/docker.sock:/var/run/docker.sock:ro \
-nextcloud/all-in-one:latest
+wget #jellyfin.yaml
+sudo docker compose -p jellyfin -f jellyfin.yaml up -d
 
-proofs monoxide opossum zoology joylessly ablaze wing distress
+#nextcloud
