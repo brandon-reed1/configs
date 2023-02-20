@@ -22,6 +22,8 @@ echo "${GREEN} Snap install GO, Node, aws-cli, google-cloud-cli, blender, discor
     sudo snap install steam --edge
     sudo snap install kdenlive 
     sudo snap install terraform --classic
+    sudo snap install remmina
+
 
 #Downloads radeon GPU and huion tablet drivers
     wget https://repo.radeon.com/amdgpu-install/22.40/ubuntu/jammy/amdgpu-install_5.4.50401-1_all.deb https://driverdl.huion.com/driver/Linux/HuionTablet_v15.0.0.89.202205241352.x86_64.deb
