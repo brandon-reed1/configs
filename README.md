@@ -1,7 +1,7 @@
 # Configuration files used to install systems or solve solutions.
 ### docker folder - contains docker compose YAML files
 ### solutions folder - contains solutions to various issues
-### terraform folder- contains .tf scripts to build cloud solutions 
+### terraform folder - contains .tf scripts to build cloud solutions 
 
 # Configure [Ubuntu 22](https://ubuntu.com/download/desktop) Linux Desktop<img align="left" width="50px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/Ubuntu.svg">
 ```bash
