@@ -3,9 +3,9 @@
 ### solutions folder - contains solutions to various issues
 ### terraform folder- contains build scripts for cloud solutions 
 
-# Configure [Ubuntu](https://ubuntu.com/download/desktop) Linux Desktop<img align="left" width="50px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/Ubuntu.svg">
+# Configure [Ubuntu 22](https://ubuntu.com/download/desktop) Linux Desktop<img align="left" width="50px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/Ubuntu.svg">
 ```bash
-wget https://raw.githubusercontent.com/trevor256/myconfigs/main/my_ubuntu.sh && sudo bash my_ubuntu.sh 
+ curl https://raw.githubusercontent.com/trevor256/configs/main/ubuntu_desktop.sh | sudo sh
 ```
 # Configure [Windows 11](https://www.microsoft.com/software-download/windows11) Desktop <img align="left" width="50px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/Windows.svg">
 
