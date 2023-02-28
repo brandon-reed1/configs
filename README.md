@@ -1,13 +1,13 @@
 # <h1 align="center">Configuration files that install systems or solve solutions.</h1>
-### <img align="left" width="20px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/docker.svg"> docker folder - contains docker compose YAML files
+### <img align="left" width="30px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/docker.svg"> docker folder - contains docker compose YAML files
 
-### <img align="left" width="20px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/solutions.svg"> solutions folder - contains solutions to various issues
+### <img align="left" width="30px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/solutions.svg"> solutions folder - contains solutions to various issues
 
-###  <img align="left" width="20px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/terraform.svg"> terraform folder - contains .tf scripts to build cloud solutions 
+###  <img align="left" width="30px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/terraform.svg"> terraform folder - contains .tf scripts to build cloud solutions 
 
 </br>
 
-### Desktop
+### <h1 align="center">Desktop</h1>
 # Configure [Ubuntu 22](https://ubuntu.com/download/desktop) Linux Desktop<img align="left" width="50px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/Ubuntu.svg">
 ```bash
  curl https://raw.githubusercontent.com/trevor256/configs/main/desktop_ubuntu.sh | sudo sh
@@ -22,7 +22,7 @@ curl https://raw.githubusercontent.com/trevor256/configs/main/desktop_fedora.sh 
 ```
 </br>
 
-### Server
+### <h1 align="center">Server</h1>
 # Configure [Debian 11](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.3.0-amd64-netinst.iso) Linux Server <img align="left" width="50px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/debian.svg">
 ```bash
 curl https://raw.githubusercontent.com/trevor256/configs/main/server_debian.sh | sudo sh
