@@ -14,9 +14,9 @@
 ```
 # Configure [Fedora](https://getfedora.org) Linux Desktop<img align="left" width="50px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/fedora.svg">
 ```bash
-curl -L https://raw.githubusercontent.com/trevor256/MyConfig/main/fedora.sh | sudo bash
+curl https://raw.githubusercontent.com/trevor256/MyConfig/main/fedora.sh | sudo sh
 ```
 # Configure [Debian 11](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.3.0-amd64-netinst.iso) Linux Server <img align="left" width="50px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/debian.svg">
 ```bash
-curl -L https://raw.githubusercontent.com/trevor256/MyConfig/main/server.sh | sudo bash
+curl https://raw.githubusercontent.com/trevor256/MyConfig/main/server.sh | sudo sh
 ```
