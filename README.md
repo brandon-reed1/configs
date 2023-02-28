@@ -1,4 +1,9 @@
-# Configure [Ubuntu](https://neon.kde.org/download) Linux Desktop<img align="right" width="80px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/debian.svg">
+# These are configuration files used to install new systems or solve solutions.
+## docker folder - contains docker images
+## solutions folder - contains solutions to various issues
+## terraform folder- contains build scripts for cloud solutions 
+
+# Configure [Ubuntu](https://ubuntu.com/download/desktop) Linux Desktop<img align="right" width="70px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/debian.svg">
 ```bash
 wget https://raw.githubusercontent.com/trevor256/myconfigs/main/my_ubuntu.sh && sudo bash my_ubuntu.sh 
 ```
