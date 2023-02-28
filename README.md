@@ -1,7 +1,9 @@
-# Configuration files that install systems or solve solutions.
-### docker folder - contains docker compose YAML files
-### solutions folder - contains solutions to various issues
-### terraform folder - contains .tf scripts to build cloud solutions 
+# <h1 align="center">Configuration files that install systems or solve solutions.</h1>
+### <img align="left" width="20px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/docker.svg"> docker folder - contains docker compose YAML files
+
+### <img align="left" width="20px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/solutions.svg"> solutions folder - contains solutions to various issues
+
+###  <img align="left" width="20px" src="https://raw.githubusercontent.com/trevor256/trevor256/main/imgs/terraform.svg"> terraform folder - contains .tf scripts to build cloud solutions 
 
 </br>
 
