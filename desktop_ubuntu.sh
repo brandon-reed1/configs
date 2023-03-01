@@ -10,6 +10,7 @@
 #Apt install git ffmpeg mysql-client-core-8.0 openjdk-17-jdk openjdk-17-jre kdenlive
 #Snap install GO, Node, aws-cli, google-cloud-cli, blender, discord, krita, postman, obs, inkscape, VScode, terraform, remmina 
     sudo apt install git ffmpeg openjdk-17-jdk openjdk-17-jre kdenlive -y &
+    wget -O - -o /dev/null https://aka.ms/InstallAzureCLIDeb | sudo bash &
     sudo snap install go --classic 
     sudo snap install node --classic
     sudo snap install aws-cli --classic 
